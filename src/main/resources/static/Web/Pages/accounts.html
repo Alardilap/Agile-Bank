@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Acounts</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../Styles/styles.css">
+    <link rel="stylesheet" href="../Styles/accounts.css">
+    <link rel="shortcut icon" href="../Images/Logobanco.png" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="../Images/logo.jpeg">
+</head>
+
+<body>
+    <div id="app" class="containerIndex">
+        <header>
+            <nav class="navbar navbar-expand-lg">
+
+                <div class="container-fluid ">
+                    <a href="../../index.html"><img class="logoHeader" src="../Images/logo.jpeg" alt="logo"></a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-end mr-5" id="navbarNav">
+                        <ul class="navbar-nav">
+
+                            <li class="logo-nav nav-item d-flex flex-column align-items-center text-center">
+                                <a class="nav-link">
+                                    <img class="logocuenta" src="../Images/image-removebg-preview (1).png"
+                                        alt="cuentaslogo">
+                                </a>
+                                <a href="#" class="create" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                                    @click="createAccount()">
+                                    <p class="createaccount p-0">Create an account</p>
+                                </a>
+                            </li>
+
+                            <li class="nav-item ">
+                                <a class="nav-link" aria-current="page" href="#">Accounts</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./cards.html">Cards</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./loanapplication.html">Loans</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./transfer.html">Transactions</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" style="color: white; font-size: 22px;" @click.prevent="signOut()"><i
+                                        class="fas fa-sign-out-alt"></i>
+                                </a>
+                            </li>
+
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+        </header>
+        <main>
+
+
+            <div class="d-flex flex-column div-cardstabla">
+                <!-- <section class="d-flex"> -->
+
+                <div class="d-flex m-3 flex-column align-items-center div-cuenta">
+
+                    <h2 v-if="accounts.length != 0" class="bienvenida-usuario mt-5 mb-2">Your Accounts!</h2>
+
+                    <div v-if="accounts.length > 0" class="cuentas-div d-flex flex-wrap">
+                        <div v-for="account of accounts" class="main-container " style="width: 22rem;">
+                            <div class="d-flex align-items-center justify-content-around logosAccounts">
+                                <button class="botonaccounts" @click="deleteAccount(account.number)">
+                                    <i class="bi bi-x-circle" style="font-size:28px; color: #d43232;"></i>
+                                </button>
+
+                                <p class="titulo-banco">Agile Bank</p>
+                                <img class="logocuentas" src="../Images/cuentas.png" alt="logocuentas">
+                            </div>
+                            <div class="d-flex flex-column justify-content-around carddiv align-items-center">
+                                <div class="d-flex   gap-3 mb-4 w-75">
+                                    <i class="fas fa-credit-card" style="color: #2bcbcb; font-size: 24px;"></i>
+                                    <h5 class="card-text"><span class="span-text">Account number:</span>
+                                        {{account.number}}</h5>
+                                </div>
+                                <div class="d-flex  gap-3 mb-4 w-75">
+                                    <i class="fas fa-dollar-sign" style="color: #2bcbcb; font-size: 24px;"></i>
+                                    <h5 class="card-text"><span class="span-text">Amount:</span>
+                                        ${{account.balance.toLocaleString()}}
+                                    </h5>
+                                </div>
+                                <div class="d-flex  gap-3 mb-4 w-75">
+                                    <i class="far fa-calendar-alt" style="color: #2bcbcb; font-size: 24px;"></i>
+                                    <h5 class="card-text"><span class="span-text">Creation date:</span>
+                                        {{account.creationDate}}</h5>
+                                </div>
+                                <div class="d-flex  gap-4 mb-4 w-75">
+                                    <i class="fas fa-credit-card" style="color: #2bcbcb; font-size: 24px;"></i>
+                                    <h5 class="card-text"><span class="span-text">Account type:</span>
+                                        {{account.accountType}}</h5>
+                                    <a v-bind:href="'./account.html?id=' + account.id"><i class="bi bi-arrow-bar-right"
+                                            style="font-size: 29px; color: #f8cd51 ;"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <section class="" :class="{'div-mayor' : loans.length===0}"
+                        v-if="accounts.length == 0 && loans.length == 0">
+
+                        <div v-else class="d-flex flex-column align-items-center justify-content-center"
+                            :class="{ 'fondo': loans.length === 0 }">
+                            <h2 class="bienvenida-usuario mt-5 mb-2">Your Accounts!</h2>
+                            <p class="textalert p-0">You don't have accounts.</p>
+                            <i class="bi bi-person-x-fill iconoLoans"></i>
+                        </div>
+
+                        <div v-else class="d-flex flex-column align-items-center justify-content-center"
+                            :class="{ 'fondo': loans.length === 0 }">
+                            <h2 class="bienvenida-usuario mt-5 mb-2">Your Loans!</h2>
+                            <p class="textalert p-0">You don't have loans.</p>
+                            <i class="bi bi-person-x-fill iconoLoans"></i>
+                        </div>
+                    </section>
+
+                </div>
+
+                <div class="d-flex gap-3 flex-column align-items-center div-tabla">
+                    <h2 v-if="loans.length != 0" class="bienvenida-usuario loanstitle mb-0">Your Loans!</h2>
+
+                    <table v-if="loans.length > 0">
+                        <thead>
+                            <tr class="encabezados">
+                                <th class="th-table">Type</th>
+                                <th class="th-table">Original Amount</th>
+                                <th class="th-table">Remaining Amount</th>
+                                <th class="th-table">Remaining Payments</th>
+                                <th class="th-table">Pay</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="loan of loans" class="cuerpo">
+                                <td class="th-table">{{loan.nameLoan}}</td>
+                                <td class="th-table">$ {{loan.amount.toLocaleString()}}</td>
+                                <td class="th-table">$ {{loan.remainAmount.toLocaleString()}}</td>
+                                <td class="th-table">{{loan.remainPayments}}</td>
+                                <td class="th-table">
+                                    <a v-bind:href="'./payments.html?id=' + loan.id">Pay</a>
+                                </td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+                <!-- </section> -->
+            </div>
+
+
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true" data-bs-backdrop="static" data-bs-keyboard="false">
+                <div class="modal-dialog" style="max-width: 400px;">
+                    <div class="modal-content">
+                        <div class="d-flex">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="d-flex flex-column align-items-center justify-content-sm-between m-4">
+                            <div class="modal-body d-flex flex-column align-items-center justify-content-center">
+                                <img class="" style="width: 5rem;" src="../Images/card-removebg-preview.png"
+                                    alt="logoadvertencia">
+                                <h5 class="mb-4 text-select">Select the type of account you want</h5>
+                                <select class="selectaccount" v-model="selectaccountType" class="mb-3  w-100">
+                                    <template v-for="accountType of accountTypes">
+                                        <option class="" style="color: black;">{{accountType}}</option>
+                                    </template>
+                                </select>
+                            </div>
+                            <div class="d-flex flex-column gap-3">
+                                <a href="./accounts.html">
+                                    <button type="button" @Click.prevent="metododos()" class="botonClose"
+                                        data-bs-dismiss="modal">Ok</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </div>
+
+    </main>
+    <footer>
+        <div class="d-flex flex-column align-items-center pt-3 pb-3 div-container">
+            <div class="d-flex flex-column items-footer">
+                <p class="titulo-banco-footer m-0 pb-3">Agile Bank</p>
+                <ul class="info-footer" style="list-style-type: none;">
+                    <li>Security</li>
+                    <li>legal warning</li>
+                    <li>Policies</li>
+                    <li>Product regulations</li>
+                </ul>
+                <p class="m-0 pb-3 pDos">© 2023 Banco Agile Colombia S.A</p>
+            </div>
+            <div class="d-flex gap-3 div-redes">
+                <i class="bi bi-facebook" style="font-size: 24px;"></i>
+                <i class="bi bi-whatsapp" style="font-size: 24px;"></i>
+                <i class="bi bi-instagram" style="font-size: 24px;"></i>
+            </div>
+        </div>
+    </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../script/accounts.js"></script>
+
+</body>
+
+</html>

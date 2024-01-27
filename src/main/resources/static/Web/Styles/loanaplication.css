@@ -1,0 +1,278 @@
+main {
+    background-color: rgb(241 241 241 / 88%);
+    /* background-color: white */
+}
+
+* {
+    /* border: solid 1px red; */
+}
+
+.inputamount {
+    font-size: 0.8rem;
+}
+
+.textomodal {
+    font-weight: lighter;
+    color: rgb(143, 142, 142);
+    font-size: 1.2rem;
+}
+
+.textContinue {
+    font-weight: 500;
+    color: #1f75dd;
+    margin-top: 0.5rem;
+}
+
+.botonClose {
+    background-color: #1f75dd;
+    border: none;
+    color: white;
+    width: 9rem;
+    height: 2.5rem;
+    font-weight: 500;
+}
+
+#exampleModal .modal-dialog {
+    max-width: 500px;
+    /* Ancho máximo del modal */
+
+}
+
+#exampleModal {
+    transition: 0.3s;
+}
+
+.modal-content {
+    height: 27rem;
+}
+
+.imagenmodal {
+    margin-bottom: 1rem;
+}
+
+#exampleModal .modal-content .btn-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+}
+
+.botonsend {
+    background-color: rgb(8, 73, 73);
+    border: none;
+    width: 30% !important;
+    height: 7% !important;
+    border-radius: 0 !important;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 1rem !important;
+}
+
+.textoloan {
+    background-color: #d4edfc;
+}
+
+ul {
+    list-style: none;
+}
+
+.textoloaninterest {
+    background-color: #FEF5DC;
+    font-weight: 200;
+    padding: 1rem;
+    font-size: 1rem;
+}
+
+select {
+    text-indent: 1px;
+    text-overflow: '';
+    border: none;
+    width: 17rem;
+    border-bottom: 1px solid #000;
+    padding: 5px;
+    height: 2.6rem;
+    background-color: #f2f2f2;
+    text-align: center;
+    color: #132a46ef;
+}
+
+input {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+    border: none;
+    width: 17rem;
+    border-bottom: 1px solid #000;
+    padding: 5px;
+    /* background: transparent; */
+    background-color: #f2f2f2;
+}
+
+select:focus {
+    outline: none;
+}
+
+.amountlabel {
+    color: #000 !important;
+    text-align: start
+}
+
+.labelamount {
+    color: #000;
+    font-weight: 400;
+}
+
+input:focus {
+    outline: none;
+}
+
+.inputamount {
+    height: 2.5rem;
+}
+
+h6 {
+    font-weight: 400;
+}
+
+.title-la {
+    /* margin-top: 2rem !important; */
+    color: #074591;
+    font-weight: 600;
+}
+
+.formulario {
+    /* background-color: #9696962d; */
+    background-color: white;
+    width: 90%;
+    height: 36rem !important;
+    margin: 2rem
+}
+
+label {
+    font-size: 1.1rem;
+}
+
+.textform {
+    font-size: 1.1rem;
+}
+
+.div-textointro {
+    background-color: #96c5ff9e;
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+}
+
+.loanstexto {
+    color: #11243B;
+    font-size: 1rem;
+    margin-left: 10%;
+    margin-bottom: 0rem;
+    font-weight: lighter;
+}
+
+.spanBA {
+    font-weight: 400;
+    color: #11243B;
+    font-size: 1rem;
+}
+
+.thick-arrow {
+    font-weight: bold;
+}
+
+.rotate-arrow {
+    transform: rotate(360deg);
+}
+
+@media (min-width: 320px) {
+    .formulario {
+        width: 90vw !important;
+    }
+
+    .textoloaninterest {
+        width: 95vw !important;
+    }
+
+    .textoloan {
+        width: 95vw !important;
+    }
+}
+
+@media (min-width: 500px) {
+    .formulario {
+        width: 65vw !important;
+    }
+
+    .textoloaninterest {
+        width: 70vw !important;
+    }
+
+    .textoloan {
+        width: 70vw !important;
+    }
+}
+
+@media (min-width: 749px) {
+    .main-la {
+        flex-direction: row !important;
+        justify-content: space-evenly !important;
+
+    }
+
+    .contenedor-la {
+        width: 40% !important;
+        height: 150vh !important;
+        margin: 0.3rem !important;
+        margin-top: 2rem !important;
+    }
+
+    .formulario {
+        width: 40% !important;
+        height: 150vh !important;
+        margin: 0.3rem !important;
+        justify-content: space-between !important;
+        margin-top: 2rem !important;
+    }
+
+    .textoloaninterest,
+    .textoloan {
+        height: 45% !important;
+        margin: 0.3rem;
+        width: 50vw !important;
+    }
+}
+
+@media (min-width : 1000px) {
+
+    .textoloaninterest,
+    .textoloan {
+        min-height: 20% !important;
+        width: 70% !important;
+    }
+
+    .formulario {
+        height: 115vh !important;
+        width: 35% !important;
+        padding-bottom: 2rem;
+    }
+
+    .contenedor-la {
+        height: 100vh !important;
+    }
+
+    .main-la {
+        align-items: flex-start !important;
+        padding-bottom: 2rem;
+    }
+
+    select {
+        margin: 0rem !important;
+    }
+}

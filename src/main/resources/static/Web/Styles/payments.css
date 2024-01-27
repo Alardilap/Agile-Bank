@@ -1,0 +1,354 @@
+* {
+    /* border: 1px solid red; */
+}
+
+.textomodal {
+    font-weight: lighter;
+    color: rgb(143, 142, 142);
+    font-size: 1.2rem;
+}
+
+.textContinue {
+    font-weight: 500;
+    color: #1f75dd;
+    margin-top: 0.5rem;
+}
+
+.botonClose {
+    background-color: #1f75dd;
+    border: none;
+    color: white;
+    width: 9rem;
+    height: 2.5rem;
+    font-weight: 500;
+}
+
+#exampleModal .modal-dialog {
+    max-width: 500px;
+
+
+}
+
+#exampleModal {
+    transition: 0.3s;
+}
+
+.modal-content {
+    height: 27rem;
+}
+
+.imagenmodal {
+    margin-bottom: 1rem;
+}
+
+#exampleModal .modal-content .btn-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+}
+
+.botonsend {
+    background-color: rgb(8, 73, 73);
+    border: none;
+    width: 30% !important;
+    height: 7% !important;
+    border-radius: 0 !important;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 1rem !important;
+}
+
+.buttonPay {
+    background-color: rgb(8, 73, 73);
+    border: none;
+    color: white;
+    font-weight: 600;
+    height: 10%;
+    width: 40% !important;
+    padding: 0.5rem;
+}
+
+.fondoform {
+    background-color: #96c5ff9e;
+    /* width: 40vw;
+    height: 50vh;
+    padding: 1rem;
+    padding-bottom: 1rem; */
+}
+
+.textselect {
+    color: white;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+select {
+    border-radius: 0.3rem;
+    height: 5vh;
+    width: 20vw;
+}
+
+.logopay {
+    width: 25vw !important;
+    height: 45vh !important;
+}
+
+.container-pay {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin: 1rem;
+}
+
+.div-textointro {
+    background-color: #96c5ff9e;
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+}
+
+.loanstexto {
+    color: #11243B;
+    font-size: 1rem;
+    margin-left: 10%;
+    margin-bottom: 0rem;
+    font-weight: lighter;
+}
+
+.spanBA {
+    font-weight: 400;
+    color: #11243B;
+    font-size: 1rem;
+}
+
+.text-pay {
+    font-size: 15px;
+    font-weight: light;
+    color: rgb(124, 124, 123);
+    margin: 0 !important;
+}
+
+.title-pay {
+    font-weight: 700;
+
+    margin: 0 !important;
+}
+
+/* inicio */
+
+.img-pay {
+    width: 100%;
+    padding: 2rem;
+}
+
+.div-image {
+    width: 40vw;
+}
+
+.image {
+    width: 85%;
+}
+
+.div-form-2 {
+    width: 40vw;
+
+}
+
+.button-pay {
+    width: 50%;
+    text-align: center;
+    background-color: rgb(8, 73, 73);
+    color: white;
+    height: 40%;
+    padding: 0.2rem;
+    font-weight: 600;
+    border: none;
+}
+
+.div-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-pay {
+    background-color: #96c5ff9e;
+    width: 70%;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.title-pay {
+    color: black;
+    font-size: 1.8rem;
+    font-weight: 700;
+    padding-bottom: 0.7rem;
+}
+
+.sub-pay {
+    font-size: 15px;
+    font-weight: light;
+    color: rgb(124, 124, 123);
+    padding-bottom: 0.3rem;
+}
+
+.title {
+    color: black;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* MEDIA QUERY */
+
+
+
+@media (max-width: 980px) {
+
+    .title-pay {
+        font-size: 1rem;
+    }
+
+    .sub-pay {
+        font-size: 1rem;
+    }
+
+    .div-image {
+        width: 50vw !important;
+        padding-bottom: 0.5rem;
+    }
+
+    .divform-2 {
+        width: 50vw !important;
+    }
+
+    .image {
+        width: 80%;
+    }
+
+    .form-pay {
+        width: 90%;
+        gap: 1rem;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 800px) {
+    .div-prin {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .div-image {
+        width: 40vw !important;
+        padding-bottom: 0.5rem;
+    }
+
+    .divform-2 {
+        width: 40vw !important;
+    }
+
+    .image {
+        width: 100%;
+    }
+
+    .form-pay {
+        width: 100%;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .title-pay {
+        font-size: 1.2rem;
+    }
+
+    .sub-pay {
+        font-size: 1rem;
+    }
+
+    .select-pay {
+        width: 80%;
+        height: 10%;
+    }
+}
+
+
+@media (max-width: 630px) {
+
+    .div-image {
+        width: 40vw !important;
+        padding-bottom: 0.5rem;
+    }
+
+    .div-prin {
+        padding: 1rem !important;
+    }
+
+    .divform-2 {
+        width: 40vw !important;
+
+    }
+
+    .image {
+        width: 110% !important;
+    }
+
+    .form-pay {
+        width: 110%;
+        gap: 1rem;
+    }
+
+    .contenedor-nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between !important;
+
+    }
+
+}
+
+@media (max-width: 450px) {
+    .div-prin {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .div-image {
+        width: 85vw !important;
+        padding-bottom: 0.5rem;
+    }
+
+    .image {
+        width: 90%;
+    }
+
+    .title-pay {
+        font-size: 1.2rem;
+    }
+
+    .sub-pay {
+        font-size: 1rem;
+    }
+
+    .divform-2 {
+        width: 90vw !important;
+    }
+
+    .form-pay {
+        width: 100%;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .select-pay {
+        width: 80%;
+        height: 10%;
+    }
+}

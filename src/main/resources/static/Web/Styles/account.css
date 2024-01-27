@@ -1,0 +1,145 @@
+* {
+    /* border: 1px solid red; */
+}
+
+.span-text {
+    font-weight: bolder;
+    font-size: 1.1rem;
+}
+
+table {
+    width: 80%;
+    border-collapse: collapse;
+}
+
+td {
+    border: 2px solid white;
+    padding: 4px;
+    text-align: left;
+    font-size: 0.6rem;
+}
+
+.cuerpo {
+    background-color: rgba(173, 165, 152, 0.295);
+    font-weight: 500;
+    color: #11243B;
+}
+
+
+
+th {
+    border: 2px solid white;
+    padding: 8px;
+
+    font-size: 0.6rem;
+}
+
+.encabezados {
+    font-weight: 800;
+    color: white !important;
+    background-color: #04a4a4 !important;
+    text-align: center;
+}
+
+.card-text {
+    font-size: 1rem;
+}
+
+.logocuentas {
+    width: 8rem;
+}
+
+.titulo-banco {
+    color: #71B0FF !important;
+    font-weight: 800 !important;
+    margin: 1rem;
+}
+
+
+.card-text {
+    color: rgb(235 235 235);
+    color: black;
+    font-weight: lighter !important;
+    font-size: 1.3rem;
+}
+
+.card-body {
+    background-color: rgba(125, 179, 245, 0.158);
+    border: 1px solid white;
+    /* padding: 1rem; */
+    /* width: 40vw; */
+    margin-bottom: 2rem;
+}
+
+.logosAccounts {
+    background-color: rgb(235 235 235);
+    margin-top: 2rem;
+    height: 20vh;
+}
+
+@media (min-width: 320px) {
+    .logosAccounts {
+        width: 95vw !important;
+    }
+
+    .card-body {
+        width: 95vw !important;
+    }
+
+    table {
+        width: 95vw !important;
+    }
+
+    .card-text {
+        font-size: 1rem;
+    }
+
+    .contenedor-nav {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+    }
+}
+
+@media (min-width: 420px) {
+    .logosAccounts {
+        width: 85vw !important;
+    }
+
+    .card-body {
+        width: 85vw !important;
+    }
+
+    table {
+        width: 85vw !important;
+    }
+
+}
+
+@media (min-width: 768px) {
+    .card-body {
+        background-color: rgba(125, 179, 245, 0.158);
+        border: 1px solid white;
+        padding: 1rem;
+        width: 55vw !important;
+    }
+
+    .logosAccounts {
+        background-color: rgb(235 235 235);
+        height: 15vh;
+        width: 55vw !important;
+    }
+
+    .div-contenedoracc {
+        margin: 2rem;
+    }
+
+    th,
+    td {
+        font-size: 1rem;
+    }
+
+    .card-text {
+        font-size: 1.3rem;
+    }
+}
